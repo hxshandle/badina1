@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<link href="css/base_css3.css" rel="stylesheet" type="text/css">
+<link href="css/global.css" rel="stylesheet" type="text/css">
+<link href="plugin/jcarousel/css/jcarousel.css" rel="stylesheet" type="text/css">
+<link href="css/dropdownmenu.css" rel="stylesheet" type="text/css">
+<style>
+.cabox{
+	width:960px;
+	margin:20px auto;
+}
+</style>
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="header_etc">
+	<div class="win1000">
+        <div id="logo2"><a href="index.html"><img src="img/logo2.png"/></a></div>
+        <div id="nav2">
+            <ul class="clearfix">
+                <li><a href="index.html" class="home"><span class="en">HOME</span><span class="ch">首页</span></a><i></i></li>
+                <li><a href="aboutus.html" class="aboutus"><span class="en">ABOUT US</span><span class="ch">关于我们</span></a><i></i></li>
+                <li><a href="news.html" class="news"><span class="en">NEWS</span><span class="ch">新闻中心</span></a><i></i></li>
+                <li><a href="shop.html" class="shop"><span class="en">SHOP</span><span class="ch">店铺中心</span></a><i></i></li>
+                <li class="on"><a href="commercials.html" class="shop"><span class="en">COMMERCIALS</span><span class="ch">形象大片</span></a><i></i></li>
+                <li><a href="lookbooks.html" class="lookbooks"><span class="en">LOOKBOOKS</span><span class="ch">产品中心</span></a><i></i></li>
+                <li><a href="vip.html" class="vip"><span class="en">VIP</span><span class="ch">会员中心</span></a><i></i></li>
+                <li><a href="contact.html" class="contact"><span class="en">CONTACT</span><span class="ch">联系我们</span></a><i></i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="commercials" class="secA">
+	<div class="win1000">
+        <div class="pt"><img src="img/pt-commercials.png"/></div>
+        <div class="cabox">
+            <ul id="mycarousel" class="jcarousel-skin-tango">
+                <li><a href="#"><img src="img/dp1.jpg" class="img-responsive-x"/></a></li>
+                <li><a href="#"><img src="img/dp1.jpg" class="img-responsive-x"/></a></li>
+                <li><a href="#"><img src="img/dp1.jpg" class="img-responsive-x"/></a></li>
+                <li><a href="#"><img src="img/dp1.jpg" class="img-responsive-x"/></a></li>
+                <li><a href="#"><img src="img/dp1.jpg" class="img-responsive-x"/></a></li>
+                <li><a href="#"><img src="img/dp1.jpg" class="img-responsive-x"/></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="footer2" class="clearfix">
+	<div class="win1000">
+        <div class="fl f1 lh24">
+            © 2014 BADINA, LLC  /  Privacy Notice  /  Customer Service<br/>
+            Batina is an international brand, origin, in Hangzhou the lead designer is the international<br/>
+        </div>
+        <div class="fr">
+            <ul id="fxlinks" class="clearfix">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="plugin/jcarousel/js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/dropdownmenu.js"></script>
+<script>
+$('#mycarousel').jcarousel({
+	scroll:1,
+	auto:5,
+	wrap:"circular",
+	buttonNextHTML: "<div class='carousel-control-btn-bg'><div class='btnIcon'></div></div>",
+	buttonPrevHTML: "<div class='carousel-control-btn-bg'><div class='btnIcon'></div></div>",
+});
+</script>
+<script>
+hNavWordChange($("#nav2 ul li a"));
+</script>
+</body>
+</html>

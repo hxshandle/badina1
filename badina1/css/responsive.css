@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+@media screen and (max-width: 1000px){
+	.win1000{
+		width:960px;
+	}
+	#aboutCon .fr{
+		width:520px;
+		margin-right:20px;
+	}
+	#newsConWrap .item{
+		width:220px;
+		margin-bottom:24px;
+	}
+	#shopAd .fr img{
+		width:560px;
+	}
+	#lookbookCon {
+	margin: 30px 16px;
+	}
+	.mod3 li{
+		width:317px;
+		height:305px;
+	}
+	#footer .win1000{
+		background-size:contain;
+	}
+	#wechat,#sina,#onlshop{
+		left:435px;
+	}
+}
+@media screen and (max-width: 1451px){
+	#header .win1000{
+		position:relative;
+	}
+	#logo{
+		left:0;
+	}
+	#nav{
+		float:right;
+	}
+	#search{
+		display:none;
+	}
+	#nav li{
+		margin-right:30px;
+	}
+}

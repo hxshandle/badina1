@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+.VScroll{
+	position:relative;
+}
+.VScrollCon{
+	position:relative;
+}
+.VScrollWrap{
+	overflow:hidden;
+	position:relative;
+}
+.VScrollBar{
+	position:absolute;
+}
+.VScrollThumb{
+	cursor:pointer;
+	position:absolute;
+}
+#aboutCon .VScroll{
+	height:558px;
+}
+#aboutCon .VScrollWrap{
+	height:558px;
+	width:500px;
+}
+#aboutCon .VScrollBar{
+	width:1px;
+	background-color:#f3f3f3;
+	height:100%;
+	top:0;
+	right:8px;
+}
+#aboutCon .VScrollThumb{
+	width:7px;
+	background-color:#666;
+	margin-left:-4px;
+}
+#aboutCon .VScrollThumb:active{
+	background-color:#000;
+}
+.nDbox .VScroll {
+height: 388px;
+margin-top: 20px;
+}
+.nDbox .VScrollWrap{
+	height: 100%;
+width: 360px;
+}
+.nDbox .VScrollCon{
+	color:#2c2d2e;
+	line-height:24px;
+}
+.nDbox .VScrollBar{
+	width:1px;
+	background-color:#3a3b3d;
+	height:100%;
+	top:0;
+	right:8px;
+}
+.nDbox .VScrollThumb{
+	width:7px;
+	background-color:#3a3b3d;
+	margin-left:-3px;
+}

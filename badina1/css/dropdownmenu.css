@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+.storeSelect{
+	text-align:center;
+	margin-bottom:35px;
+}
+.dropdown-menu-group label{
+	margin-right:5px;
+}
+.dropdown-btn{
+	display:block;
+	background-color:whtie;
+	border:#999 1px solid;
+	position:relative;
+	padding:2px;
+	margin-right:5px;
+	line-height:22px;
+	text-align:left;
+	margin-bottom:15px;	
+}
+.dropdown-btn span{
+	display:inline-block;
+	color:#666666;
+	padding-left:6px;
+	height:16px;
+	line-height:16px;
+	vertical-align:top;
+	position:relative;
+	top:3px;
+	width: 320px;
+}
+.dropdown-btn a.dicon{
+	display:inline-block;
+	width:7px;
+	height:4px;
+	background:url(../img/storeDrop-ArrowIco.png);
+	margin:0 5px;
+	vertical-align:middle;
+}
+.dropdown-btn.open a.dicon{
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	-webkit-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+}
+.dropdown-btn .dropdown-select{
+	position:absolute;
+	width:100%;
+	background-color:white;
+	margin-left:-3px;
+	top:26px;
+	transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	height:0px;
+	opacity:0;
+	overflow:hidden;
+	z-index:600;
+	border:#999 1px solid;
+}
+.dropdown-btn.open .dropdown-select{
+	opacity:1;
+	height:auto;
+	padding:5px;
+	width:339px;
+}
+.dropdownBorder{
+	width:390px;
+}
+.dropdown-select a{
+	display:inline-block;
+	color:#666666;
+	height:20px;
+	line-height:20px;
+	margin-right:30px;
+}
+.dropdown-select a:hover{
+	background-color:#f4f4f4;
+}

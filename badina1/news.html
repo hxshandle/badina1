@@ -1,0 +1,830 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+    <link href="css/base_css3.css" rel="stylesheet" type="text/css">
+    <link href="css/global.css" rel="stylesheet" type="text/css">
+    <style>
+        #newsDetail { position: fixed; z-index: 1000; background: rgba(255,255,255,0.5); width: 100%; top: 0; left: 0; display: none; }
+
+        .nDbox { width: 960px; background-color: white; height: 514px; box-shadow: 0 0 38px #333; margin: 0 auto; top: 50%; margin-top: -257px; position: relative; display: none; }
+            .nDbox .fl img { margin: 20px; width: 475px; }
+            .nDbox .fr { width: 415px; margin: 20px 20px 20px 0; }
+                .nDbox .fr .m1 { position: relative; }
+                .nDbox .fr .date { font-size: 40px; color: #2c2d2e; font-family: 'DIDOT_0'; letter-spacing: 2px; }
+                .nDbox .fr .title { font-size: 16px; color: #666; font-family: 微软雅黑; letter-spacing: 2px; margin-top: -8px; }
+                .nDbox .fr .fx a { display: inline-block; background: url(img/fxIco.gif) no-repeat; width: 31px; height: 27px; position: absolute; right: 36px; top: 12px; }
+                    .nDbox .fr .fx a:nth-child(2) { background-position: -31px 0; right: 0; }
+        .ndcontrol { width: 30px; height: 30px; position: absolute; cursor: pointer; }
+            .ndcontrol.close { top: 15px; right: -30px; background: url(img/close.gif); }
+            .ndcontrol.prev { bottom: 15px; right: -30px; background: url(img/prev.gif); }
+            .ndcontrol.next { bottom: 46px; right: -30px; background: url(img/next.gif); }
+
+        .imgS { display: block; margin-left: auto; margin-right: auto; }
+
+
+        .tit { width: 974px; margin-left: auto; margin-right: auto; font-size: 26px; font-family: 'Times New Roman'; border-bottom: 1px solid #dcdcdc; margin-top: 50px; margin-bottom: 20px; color: black; }
+        .img-c { zoom: 1; overflow: hidden; margin-left: auto; margin-right: auto; width: 975px; height: 316px; position: relative; margin-bottom:20px; }
+        .imgUl { zoom: 1; overflow: hidden; padding-bottom: 20px; position: relative; }
+            .imgUl .li { float: left; width: 318px; height: 306px; margin-top: 10px; margin-right: 10px; position: relative; overflow: hidden; cursor: pointer; }
+            .imgUl .zz { width: 100%; height: 45px; line-height: 45px; position: absolute; bottom: -45px; left: 0px; }
+                .imgUl .zz .bg { background-color: #1d1c1c; width: 100%; height: 100%; position: absolute; left: 0px; right: 0px; }
+                .imgUl .zz .tc { padding-left: 25px; padding-right: 25px; color: white; position: relative; z-index: 10; }
+                    .imgUl .zz .tc .fr { color: #999999; }
+
+
+            .imgUl .zz2 { width: 100%; height: 100%; position: absolute; bottom: 0px; left: 0px; }
+                .imgUl .zz2 .bg { background-color: #1d1c1c; width: 100%; height: 100%; position: absolute; left: 0px; right: 0px; opacity: 0.8; filter: alpha(opacity=80); }
+                .imgUl .zz2 .tc { text-align: center; line-height: 306px; color: white; position: relative; z-index: 10; vertical-align: middle; }
+                    .imgUl .zz2 .tc .fr { color: #999999; }
+                .imgUl .zz2 .tc-c { display: inline-block; vertical-align: middle; }
+                .imgUl .zz2 .p1 { font-size: 64px; font-family: 'Times New Roman'; font-style: italic; line-height: 60px; }
+                .imgUl .zz2 .p2 { font-size: 17px; margin-top: 20px; line-height: 20px; }
+    </style>
+    <link href="css/Vscroll.css" rel="stylesheet" type="text/css">
+    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="header_etc">
+        <div class="win1000">
+            <div id="logo2"><a href="index.html"><img src="img/logo2.png" /></a></div>
+            <div id="nav2">
+                <ul class="clearfix">
+                    <li><a href="index.html" class="home"><span class="en">HOME</span><span class="ch">首页</span></a><i></i></li>
+                    <li><a href="aboutus.html" class="aboutus"><span class="en">ABOUT US</span><span class="ch">关于我们</span></a><i></i></li>
+                    <li class="on"><a href="news.html" class="news"><span class="en">NEWS</span><span class="ch">新闻中心</span></a><i></i></li>
+                    <li><a href="shop.html" class="shop"><span class="en">SHOP</span><span class="ch">店铺中心</span></a><i></i></li>
+                    <li><a href="commercials.html" class="shop"><span class="en">COMMERCIALS</span><span class="ch">形象大片</span></a><i></i></li>
+                    <li><a href="lookbooks.html" class="lookbooks"><span class="en">LOOKBOOKS</span><span class="ch">产品中心</span></a><i></i></li>
+                    <li><a href="vip.html" class="vip"><span class="en">VIP</span><span class="ch">会员中心</span></a><i></i></li>
+                    <li><a href="contact.html" class="contact"><span class="en">CONTACT</span><span class="ch">联系我们</span></a><i></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="news" class="secA">
+        <div class="win1000">
+            <div class="tit">News center</div>
+            <a><img class="imgS" src="img/news1.jpg" /></a>
+            <div class="img-c">
+                <div class="imgUl">
+                    <div class="li item">
+                        <img src="img/news2.jpg" />
+                        <div class="zz">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <span class="fl">芭蒂娜官网最新上线</span><span class="fr">2014/10/11</span>
+                            </div>
+                        </div>
+                        <div class="zz2">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <div class="tc-c">
+                                    <div class="p1">
+                                        Look<br />
+                                        BOOKS
+                                    </div>
+                                    <div class="p2">
+                                        VIEW DETAIL >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li item">
+                        <img src="img/news3.jpg" />
+                        <div class="zz">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <span class="fl">芭蒂娜官网最新上线</span><span class="fr">2014/10/11</span>
+                            </div>
+                        </div>
+                        <div class="zz2">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <div class="tc-c">
+                                    <div class="p1">
+                                        Lo1ok<br />
+                                        BOOKS
+                                    </div>
+                                    <div class="p2">
+                                        VIEW DETAIL >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li item">
+                        <img src="img/news4.jpg" />
+                        <div class="zz">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <span class="fl">芭蒂娜官网最新上线</span><span class="fr">2014/10/11</span>
+                            </div>
+                        </div>
+                        <div class="zz2">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <div class="tc-c">
+                                    <div class="p1">
+                                        Lo2ok<br />
+                                        BOOKS
+                                    </div>
+                                    <div class="p2">
+                                        VIEW DETAIL >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li item">
+                        <img src="img/news2.jpg" />
+                        <div class="zz">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <span class="fl">芭蒂娜官网最新上线</span><span class="fr">2014/10/11</span>
+                            </div>
+                        </div>
+                        <div class="zz2">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <div class="tc-c">
+                                    <div class="p1">
+                                        Look<br />
+                                        BOOKS
+                                    </div>
+                                    <div class="p2">
+                                        VIEW DETAIL >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li item">
+                        <img src="img/news3.jpg" />
+                        <div class="zz">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <span class="fl">芭蒂娜官网最新上线</span><span class="fr">2014/10/11</span>
+                            </div>
+                        </div>
+                        <div class="zz2">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <div class="tc-c">
+                                    <div class="p1">
+                                        Lo1ok<br />
+                                        BOOKS
+                                    </div>
+                                    <div class="p2">
+                                        VIEW DETAIL >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li item">
+                        <img src="img/news4.jpg" />
+                        <div class="zz">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <span class="fl">芭蒂娜官网最新上线</span><span class="fr">2014/10/11</span>
+                            </div>
+                        </div>
+                        <div class="zz2">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <div class="tc-c">
+                                    <div class="p1">
+                                        Lo2ok<br />
+                                        BOOKS
+                                    </div>
+                                    <div class="p2">
+                                        VIEW DETAIL >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li item">
+                        <img src="img/news2.jpg" />
+                        <div class="zz">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <span class="fl">芭蒂娜官网最新上线</span><span class="fr">2014/10/11</span>
+                            </div>
+                        </div>
+                        <div class="zz2">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <div class="tc-c">
+                                    <div class="p1">
+                                        Look<br />
+                                        BOOKS
+                                    </div>
+                                    <div class="p2">
+                                        VIEW DETAIL >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li item">
+                        <img src="img/news3.jpg" />
+                        <div class="zz">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <span class="fl">芭蒂娜官网最新上线</span><span class="fr">2014/10/11</span>
+                            </div>
+                        </div>
+                        <div class="zz2">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <div class="tc-c">
+                                    <div class="p1">
+                                        Lo1ok<br />
+                                        BOOKS
+                                    </div>
+                                    <div class="p2">
+                                        VIEW DETAIL >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="li item">
+                        <img src="img/news4.jpg" />
+                        <div class="zz">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <span class="fl">芭蒂娜官网最新上线</span><span class="fr">2014/10/11</span>
+                            </div>
+                        </div>
+                        <div class="zz2">
+                            <div class="bg">
+                            </div>
+                            <div class="tc">
+                                <div class="tc-c">
+                                    <div class="p1">
+                                        Lo2ok<br />
+                                        BOOKS
+                                    </div>
+                                    <div class="p2">
+                                        VIEW DETAIL >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer2" class="clearfix">
+        <div class="win1000">
+            <div class="fl f1 lh24">
+                © 2014 BADINA, LLC  /  Privacy Notice  /  Customer Service<br />
+                Batina is an international brand, origin, in Hangzhou the lead designer is the international<br />
+            </div>
+            <div class="fr">
+                <ul id="fxlinks" class="clearfix">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="newsDetail">
+        <div class="nDbox clearfix">
+            <div class="fl"><img src="img/nd1.jpg" /></div>
+            <div class="fr">
+                <div class="m1">
+                    <p class="date">2014/06/18</p>
+                    <p class="title">热烈祝贺芭蒂娜官网改版上线</p>
+                    <div class="fx"><a href="#"></a><a href="#"></a></div>
+                </div>
+                <div class="ndcontrol close"></div>
+                <div class="ndcontrol prev"></div>
+                <div class="ndcontrol next"></div>
+                <div class="VScroll">
+                    <div class="VScrollWrap">
+                        <div class="VScrollCon yahei param">
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                        </div>
+                    </div>
+                    <div class="VScrollBar">
+                        <div class="VScrollThumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nDbox clearfix">
+            <div class="fl"><img src="img/nd1.jpg" /></div>
+            <div class="fr">
+                <div class="m1">
+                    <p class="date">2014/06/18</p>
+                    <p class="title">热烈祝贺芭蒂娜官网改版上线</p>
+                    <div class="fx"><a href="#"></a><a href="#"></a></div>
+                </div>
+                <div class="ndcontrol close"></div>
+                <div class="ndcontrol prev"></div>
+                <div class="ndcontrol next"></div>
+                <div class="VScroll">
+                    <div class="VScrollWrap">
+                        <div class="VScrollCon yahei param">
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                        </div>
+                    </div>
+                    <div class="VScrollBar">
+                        <div class="VScrollThumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nDbox clearfix">
+            <div class="fl"><img src="img/nd1.jpg" /></div>
+            <div class="fr">
+                <div class="m1">
+                    <p class="date">2014/06/18</p>
+                    <p class="title">热烈祝贺芭蒂娜官网改版上线</p>
+                    <div class="fx"><a href="#"></a><a href="#"></a></div>
+                </div>
+                <div class="ndcontrol close"></div>
+                <div class="ndcontrol prev"></div>
+                <div class="ndcontrol next"></div>
+                <div class="VScroll">
+                    <div class="VScrollWrap">
+                        <div class="VScrollCon yahei param">
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                        </div>
+                    </div>
+                    <div class="VScrollBar">
+                        <div class="VScrollThumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nDbox clearfix">
+            <div class="fl"><img src="img/nd1.jpg" /></div>
+            <div class="fr">
+                <div class="m1">
+                    <p class="date">2014/06/18</p>
+                    <p class="title">热烈祝贺芭蒂娜官网改版上线</p>
+                    <div class="fx"><a href="#"></a><a href="#"></a></div>
+                </div>
+                <div class="ndcontrol close"></div>
+                <div class="ndcontrol prev"></div>
+                <div class="ndcontrol next"></div>
+                <div class="VScroll">
+                    <div class="VScrollWrap">
+                        <div class="VScrollCon yahei param">
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                        </div>
+                    </div>
+                    <div class="VScrollBar">
+                        <div class="VScrollThumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nDbox clearfix">
+            <div class="fl"><img src="img/nd1.jpg" /></div>
+            <div class="fr">
+                <div class="m1">
+                    <p class="date">2014/06/18</p>
+                    <p class="title">热烈祝贺芭蒂娜官网改版上线</p>
+                    <div class="fx"><a href="#"></a><a href="#"></a></div>
+                </div>
+                <div class="ndcontrol close"></div>
+                <div class="ndcontrol prev"></div>
+                <div class="ndcontrol next"></div>
+                <div class="VScroll">
+                    <div class="VScrollWrap">
+                        <div class="VScrollCon yahei param">
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                        </div>
+                    </div>
+                    <div class="VScrollBar">
+                        <div class="VScrollThumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nDbox clearfix">
+            <div class="fl"><img src="img/nd1.jpg" /></div>
+            <div class="fr">
+                <div class="m1">
+                    <p class="date">2014/06/18</p>
+                    <p class="title">热烈祝贺芭蒂娜官网改版上线</p>
+                    <div class="fx"><a href="#"></a><a href="#"></a></div>
+                </div>
+                <div class="ndcontrol close"></div>
+                <div class="ndcontrol prev"></div>
+                <div class="ndcontrol next"></div>
+                <div class="VScroll">
+                    <div class="VScrollWrap">
+                        <div class="VScrollCon yahei param">
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                        </div>
+                    </div>
+                    <div class="VScrollBar">
+                        <div class="VScrollThumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nDbox clearfix">
+            <div class="fl"><img src="img/nd1.jpg" /></div>
+            <div class="fr">
+                <div class="m1">
+                    <p class="date">2014/06/18</p>
+                    <p class="title">热烈祝贺芭蒂娜官网改版上线</p>
+                    <div class="fx"><a href="#"></a><a href="#"></a></div>
+                </div>
+                <div class="ndcontrol close"></div>
+                <div class="ndcontrol prev"></div>
+                <div class="ndcontrol next"></div>
+                <div class="VScroll">
+                    <div class="VScrollWrap">
+                        <div class="VScrollCon yahei param">
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                        </div>
+                    </div>
+                    <div class="VScrollBar">
+                        <div class="VScrollThumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nDbox clearfix">
+            <div class="fl"><img src="img/nd1.jpg" /></div>
+            <div class="fr">
+                <div class="m1">
+                    <p class="date">2014/06/18</p>
+                    <p class="title">热烈祝贺芭蒂娜官网改版上线</p>
+                    <div class="fx"><a href="#"></a><a href="#"></a></div>
+                </div>
+                <div class="ndcontrol close"></div>
+                <div class="ndcontrol prev"></div>
+                <div class="ndcontrol next"></div>
+                <div class="VScroll">
+                    <div class="VScrollWrap">
+                        <div class="VScrollCon yahei param">
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                            诞生于意大利纯正轻奢风格的COLOVE（卡拉佛），传递"独立、悦己、分享"的精神主张，探求艺术情怀、先锋创意与实用主义成衣激情碰撞，呈现出自我、率性、利落、精致的精神气场与个性绽放的摩登风格。<br />
+                            <br />
+                            自我精神、个性分格是COLOVE（卡拉佛）品牌所推崇的时尚哲学，造型的出发原点是干净、简约却锐利的气场，廓形与线条透露着都会气息和女性个性的现代精神，强调利落整体感和绝对自信的强大气场。<br />
+                            <br />
+                            对比冲撞<br />
+                            复刻与未来，经典与摩登，女性与中性，热情与冷静，COLOVE（卡拉佛）迸发出充满矛盾的形容词，她是率性与优雅之间的矛盾综合体，但给的整体呈现却是迷人率性，浪漫不羁。<br />
+                            <br />
+                            低调奢华<br />
+                            COLOVE（卡拉佛）不需要喧嚣的艳丽，而是个人风格的自信绽放。一种崭新概念的奢华在设计中低调绽放，重新诠释高级时装的穿法混搭概念，混合了高级与街头，更注重材质、剪裁和搭配性。<br />
+                            轻松时尚<br />
+                            轻松自然，不过度夸张和张扬，平衡美感，落落大方却有着混搭的实验乐趣和各种个性的不同展现，使得每一个COLOVE（卡拉佛）女孩都是与众不同、独一无二的！<br />
+                            她们是偶像、指标、先驱者，她们自信、率性、摩登、帅气，是优雅和清纯并存的混合体，自信型格，COLOVE（卡拉佛）就是这个时代的引领者和先驱者。在超现实帝国的逆光苍穹中，COLOVE将始终以超前的文化艺术引导着主流时尚，打响品牌行业领袖地位、领袖态度和领袖意见，确立品牌国际化概念和特色概念并可持续创新， 展现出意大利理想艺术的文化烙印，让每一位拥有它的都市女性成为自己生活的设计者与主宰者！<br />
+                        </div>
+                    </div>
+                    <div class="VScrollBar">
+                        <div class="VScrollThumb"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/Vscroll.js"></script>
+    <link href="plugin/owlcarousel/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="plugin/owlcarousel/owl.theme.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="plugin/owlcarousel/owl.carousel.js"></script>
+
+    <script>
+
+        var curImg_Index;
+        var lc;
+        //$(".imgUl").width(($(".imgUl .li").width() + 10) * $(".imgUl .li").length);
+
+        lc = $(".imgUl").owlCarousel();
+
+
+
+        $(".imgUl .li").click(function () {
+            var i = $(".imgUl .li").index($(this));
+
+            $("#newsDetail").show();
+            $(".nDbox").hide();
+            $(".nDbox").eq(i).show();
+            cs_VScroll($(".nDbox").eq(i));
+
+        })
+        $(".imgUl .li").hover(function () {
+            $(this).find(".zz2").stop(true, false).animate({ top: "-100%" }, 500);
+            $(this).find(".zz").stop(true, false).animate({ bottom: 0 }, 500);
+        }, function () {
+            $(this).find(".zz2").stop(true, false).animate({ top: "0px" }, 500);
+            $(this).find(".zz").stop(true, false).animate({ bottom: -45 }, 300);
+        })
+
+        if (ismoblieplatform()) {
+            $('#newsCon').imagesLoaded(function () {
+                $('#newsCon').masonry({
+                    "gutter": 24,
+                    "columnWidth": 220
+                });
+            });
+        } else {
+            $('#newsCon').imagesLoaded(function () {
+                $('#newsCon').masonry({
+                    "gutter": 14,
+                    "columnWidth": 240
+                });
+            });
+        }
+        $("#newsDetail").css("height", $(window).height() + "px");
+        $("#newsDetail").click(function () {
+            $(this).fadeOut();
+        });
+        $("#newsCon .detail").click(function () {
+            var i = $("#newsCon .detail").index($(this));
+            $("#newsDetail").show();
+            $(".nDbox").hide();
+            $(".nDbox").eq(i).show();
+            cs_VScroll($(".nDbox").eq(i));
+        });
+        $(".nDbox").click(function (e) {
+            e.stopPropagation();
+        });
+
+        $(".ndcontrol").click(function () {
+            var t = $(this);
+            var i = $(".nDbox").index(t.parents(".nDbox"));
+            if ($(this).hasClass("close")) {
+                $("#newsDetail").fadeOut();
+            } else if ($(this).hasClass("prev")) {
+                i--;
+                if (i == -1) {
+                    i = $(".nDbox").size() - 1;
+                }
+                t.parents(".nDbox").hide();
+                $(".nDbox").eq(i).show();
+                cs_VScroll($(".nDbox").eq(i));
+            } else {
+                i++;
+                if (i == $(".nDbox").size()) {
+                    i = 0;
+                }
+                t.parents(".nDbox").hide();
+                $(".nDbox").eq(i).show();
+                cs_VScroll($(".nDbox").eq(i));
+            }
+        });
+
+
+
+        var os_dire = "none";
+        var os_timer;
+        $(".img-c").mouseenter(function () {
+            $(".img-c").mousemove(function (e) {
+                e.stopPropagation();
+                if (e.clientX < $(window).width() / 2 - $(".img-c").width() / 2 + 160 && e.clientX > $(window).width() / 2 - $(".img-c").width() / 2) {
+                    if (os_dire != "left") {
+                        window.clearInterval(os_timer);
+                        os_timer = window.setInterval(owlmLeft, 10);
+                        os_dire = "left";
+                    }
+                } else if (e.clientX > $(window).width() / 2 + $(".img-c").width() / 2 - 160 && e.clientX < $(window).width() / 2 + $(".img-c").width() / 2) {
+                    if (os_dire != "right") {
+                        window.clearInterval(os_timer);
+                        os_timer = window.setInterval(owlmRight, 10);
+                        os_dire = "right";
+                    }
+                } else {
+                    window.clearInterval(os_timer);
+                    os_dire = "none";
+                }
+            });
+        });
+
+
+
+        function owlmRight() {
+            var ml = parseInt($(".owl-stage").css("marginLeft"));
+            if ($(".owl-stage").width() + ml > $(".imgUl").width()) {
+                $(".owl-stage").css("marginLeft", ml - 10 + "px");
+            }
+        }
+        function owlmLeft() {
+            var ml = parseInt($(".owl-stage").css("marginLeft"));
+            if (ml < 0) {
+                $(".owl-stage").css("marginLeft", ml + 10 + "px");
+            }
+        }
+        $(".img-c").mouseleave(function () {
+            $(".img-c").unbind("mousemove");
+        });
+
+
+
+    </script>
+    <script>
+        hNavWordChange($("#nav2 ul li a"));
+    </script>
+</body>
+</html>

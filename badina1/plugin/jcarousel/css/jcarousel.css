@@ -1,0 +1,100 @@
+.jcarousel-container{
+	position:relative;
+}
+.jcarousel-clip{
+	overflow:hidden;
+}
+#shop .jcarousel-container{
+	width:960px;
+	margin:0 auto;
+}
+#shop .jcarousel-item{
+	width:960px;
+	height:515px;
+}
+#shop .jcarousel-clip{
+	width:960px;
+	height:515px;
+}
+#shop .carousel-control-btn-bg{
+	width:31px;
+	height:89px;
+	position:absolute;
+	cursor:pointer;
+	opacity:0.7;
+	background-repeat:0;
+	transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	top:50%;
+	margin-top:-44px;
+}
+#shop .jcarousel-prev{
+	background-image:url(../img/jc-prev.gif);
+	left:0;
+}
+#shop .jcarousel-prev:hover{
+	opacity:1;
+}
+#shop .jcarousel-next{
+	background-image:url(../img/jc-next.gif);
+	right:0;
+}
+#shop .jcarousel-next:hover{
+	opacity:1;
+}
+#commercials .jcarousel-container{
+	width:960px;
+	margin:0 auto;
+}
+#commercials .jcarousel-item{
+	width:960px;
+	height:600px;
+}
+#commercials .jcarousel-clip{
+	width:960px;
+	height:600px;
+}
+#commercials .carousel-control-btn-bg{
+	width:49px;
+	height:84px;
+	position:absolute;
+	cursor:pointer;
+	background-color:rgba(255,255,255,0.7);
+	transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	top:50%;
+	margin-top:-42px;
+}
+#commercials .carousel-control-btn-bg .btnIcon{
+	width:16px;
+	height:29px;
+	position:relative;
+	top:50%;
+	margin-top:-15px;
+	left:50%;
+	margin-left:-8px;
+}
+#commercials .jcarousel-prev{
+	left:0;
+}
+#commercials .jcarousel-prev .btnIcon{
+	background-image:url(../img/dp-arrow-l.png);
+}
+#commercials .jcarousel-prev:hover{
+	background-color:rgba(255,255,255,1);
+}
+#commercials .jcarousel-next{
+	right:0;
+}
+#commercials .jcarousel-next .btnIcon{
+	background-image:url(../img/dp-arrow-r.png);
+}
+#commercials .jcarousel-next:hover{
+	background-color:rgba(255,255,255,1);
+}

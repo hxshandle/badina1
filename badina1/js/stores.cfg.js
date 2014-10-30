@@ -10,12 +10,14 @@ var SHOPS = [
       {
         name:"上海徐家汇金",
         address:"上海市徐汇肇嘉滨路1000号汇金百货3楼",
-        image:"http://www.placehold.it/350x150"
+        image:"http://www.89ef.com.cn/UploadFile/Thumb2/20120712/p171t02apnd9h1qkn2ct1el0h8c6_TPSY.jpg",
+        storeId:"s1"
       },
       {
         name:"上海龙之梦",
         address:"上海市闵行区沪闵路6088号凯德龙之梦1层01-47号",
-        image:"http://www.placehold.it/350x150"
+        image:"http://www.89ef.com.cn/UploadFile/Thumb2/20120712/p171t02apms86mgp16aq10q5ao44_TPSY.jpg",
+        storeId:"s2"
       }
     ]
   }]

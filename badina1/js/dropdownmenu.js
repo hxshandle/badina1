@@ -3,7 +3,7 @@ $(document).ready(function () {
   function buildSelectItem(itemList, root) {
     root.html('');
     _.each(itemList, function (item) {
-      $('<a>').text(item.name).data("address", item.address || null).data("name",item.name || null).data("ref", item.id || item.name).data('stores', item.stores || null).attr("href", "javascript:void(0)").appendTo(root);
+      $('<a>').text(item.name).data("dataEntry",item).data("address", item.address || null).data("name",item.name || null).data("ref", item.id || item.name).data('stores', item.stores || null).attr("href", "javascript:void(0)").appendTo(root);
     });
   }
 
@@ -113,7 +113,7 @@ $(document).ready(function () {
       // SHOP
       if ($root.attr('id') == "shopSel") {
         map.clearOverlays();
-        markCity(currentCity,[{name:$this.data('name'),address:$this.data('address')}],true);
+        markCity(currentCity,[$this.data('dataEntry')],true);
       }
     });
   }

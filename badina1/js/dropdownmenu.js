@@ -49,9 +49,13 @@ $(document).ready(function () {
   var g = new BMap.Geocoder();
   var currentCity = null;
 
-  function addMarker(store, point) {
+  function addMarker(store, point,needCenter) {
     var marker = new BMap.Marker(point);
+    needCenter = needCenter || false;
     map.addOverlay(marker);
+    if(needCenter){
+      map.centerAndZoom(point,11);
+    }
     marker.addEventListener("click", function () {
       var opts = {
         width: 350, // 信息窗口宽度
@@ -66,12 +70,12 @@ $(document).ready(function () {
     });
   }
 
-  function markCity(cityName, stores) {
+  function markCity(cityName, stores,needCenter) {
     currentCity = cityName;
     _.each(stores, function (store) {
       g.getPoint(store.address, function (point) {
         if (point) {
-          addMarker(store, point);
+          addMarker(store, point,needCenter);
         }
       }, cityName);
     });
@@ -109,7 +113,7 @@ $(document).ready(function () {
       // SHOP
       if ($root.attr('id') == "shopSel") {
         map.clearOverlays();
-        markCity(currentCity,[{name:$this.data('name'),address:$this.data('address')}]);
+        markCity(currentCity,[{name:$this.data('name'),address:$this.data('address')}],true);
       }
     });
   }
